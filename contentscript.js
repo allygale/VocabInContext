@@ -17,23 +17,22 @@ window.onload = function(){
 					console.log("hash is: " + hashed_word);
 					vocab_ht[hashed_word] = 1;
 				}
+				console.log(vocab_ht);
 
 				// Get all of the text content from the <p> elements in the page
 				var paragraphs = document.getElementsByTagName('p');
-				for (var i = 0; i < 3; i++) {
+				for (var i = 0; i < paragraphs.length; i++) {
 					var paragraph_text = paragraphs[i].innerText;
 					var paragraph_words = paragraph_text.split(" ");
 					
 					for (var j = 0; j < paragraph_words.length; j++) {
-						if (paragraph_words[j] == 'and') {
-							console.log("AT AND");
-							console.log((String(paragraph_words[j])).hashCode());
-						}
 					// Hash it
 						var hc = (String(paragraph_words[j])).hashCode();
+						//console.log("hash is:" + hc);
 						if (vocab_ht[hc] == 1) {
+							console.log("at a vocab word");
 							var not_bold = paragraph_words[j];
-							paragraph_words[j] = "<b> YOLO BABY</b>";
+							paragraph_words[j] = "yolo";
 						}
 					}
 					paragraphs[i].innerText = paragraph_words.join(" ");
