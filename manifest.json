@@ -1,0 +1,12 @@
+// Content script because the extension needs to interact with web pages what the user loads (as opposed to pages that are included in the extension)
+{
+	"name": "In Context",
+	"manifest_version": 2,
+	"version": "0.0.1",
+	"description": "Bolds a given set of vocabulary words that appear in the context of the current tab.",
+	"web_accessible_resources": ["vocab.txt"],
+	"content_scripts": [ {
+	  	"matches": ["http://*/*"],
+	    "js" : ["contentscript.js"]
+	  } ]
+}
