@@ -6,12 +6,9 @@ Word list format:
 
 word | definition
 
-
 word2 | definition 2
 
-
 ... 
-
 
 word n | defintion n
 
